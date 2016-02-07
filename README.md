@@ -23,7 +23,7 @@ Doing this doesn't sign you up for anything and you won't get emails because of 
 It simply sets two variables in a global configuration file on your computer for later use.
 
 ### Initialization
-Let's make a new directory that will contain our practice Git project, and move inside that new directory.
+Make a new directory that will contain your practice Git project, and `cd` into that new directory.
 ```
 $ mkdir practice-git
 $ cd practice-git
@@ -35,8 +35,38 @@ $ git init
 Initialized empty Git repository in /path/to/your/practice-git/.git
 ```
 
-### Staging Files
+Congratulations, you have just created your first Git repository!
 
-### Commits
+### Staging Files
+Let's give Git some files to track. Create a new text file
+`$ touch README.md`
+and, using your favorite editor, write `Hello World` in the first line.
+
+If you run `$ git status` you will see something like
+```
+$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+Run `$ git add README.md` to stage the readme file.
+
+### Committing Changes
+Once changes have been staged, we can commit them to the local repository with 
+```
+$ git commit -m "Initial commit."
+```
+The `-m` flag signals that the string in double quotes following it is the *commit message*,
+a short description of the changes in the commit.
 
 ### Remotes
+
+## Best Practices
+### Commit Messages
