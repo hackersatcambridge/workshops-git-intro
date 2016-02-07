@@ -67,6 +67,17 @@ The `-m` flag signals that the string in double quotes following it is the *comm
 a short description of the changes in the commit.
 
 ### Remotes
+So far everything you've done has been on your local machine. To actually share code,
+we need to set up a remote repository. Login at https://github.com/ and make a new
+repository with the button on the rightmost column. Make sure you DO NOT initialize
+the repository with a README since you've already made one locally.
+
+To tell your local Git repository where the remote is, run
+```
+$ git remote set-url origin <your github repository url>
+```
+
+### Pushing
 
 ## Best Practices
 ### Commit Messages
