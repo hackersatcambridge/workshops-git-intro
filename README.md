@@ -131,9 +131,46 @@ you should `$ git pull` to receive the changes in your local repository.
 Feel free to spend some extra time making new branches, committing things, and merging back and forth!
 
 ## Best Practices
-### Branching Structure
+### When to Commit & Commit Messages
+Generally you should commit when you have implemented a small feature in your project. Your commit messages
+should be able to tell readers what was accomplished in your commit in less than 80 characters. If you really
+need to add more information, you can do so in a multi-line commit:
+```
+$ git commit -m "First line should be less than 80 char
+Subsequent lines add information"
+```
+or simply run `$ git commit` which will open up your editor. The first line should contain all the information necessary
+to tell readers what that commit accomplishes! If you find that it cannot, you have probably included too many
+changes in your commit.
+
+Some examples of things that are good commits:
+- Implemented a method.
+- Wrote an interface.
+- Refactored a method.
+- Renamed a class, method, or function.
+Bad commits:
+- An entire fully implemented class (too large).
+- Incomplete code, especially syntax mistakes.
+- Single typo or stylistic fixes (too small).
+- Changes for multiple unrelated features.
+
+### Branching
+Whenever you would like to work on a new major feature, such as a new class or a refactor, make a branch
+with a descriptive name such as "classifier-implementation" or "migrating-to-sql". Depending on how big your
+group is, it may be useful to include your name in the branch name as well.
+
 ### Pull Requests
-### Commit Messages
+Never push to master. Even when working by yourself on a project, it is good practice to make branches for
+features and to merge into master only when the feature has been fully implemented, tested, and reviewed.
+
+After implementing and testing, you should submit your code for review by somebody from your team via a
+*pull request*, which is a proposal to merge one branch into another. Once the owner of the branch or
+repository, and ideally a few more people, look at your code for style and conformity to project guidelines,
+the pull request can be approved, in which case GitHub will merge the branches.
+
+You can read more about the process here: https://guides.github.com/introduction/flow/
+While this process seems tedious, it is universally adopted by top software companies to ensure quality of
+code. If a company actually skips code review, definitely think twice about working there.
 
 ## Tips
 ### Aliasing
