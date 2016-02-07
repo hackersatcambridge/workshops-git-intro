@@ -105,7 +105,9 @@ The owner of the repository should then pull the changes (partner, look over the
 $ git pull
 ```
 You'll notice that your partner's branch have been pulled to your local repository. To finalize these changes,
-checkout your partner's branch the master branch, then run
+first checkout your partner's branch. This is necessary because no reference for your partner's branch exists locally
+until you check it out, even though the changes themselves have already been fetched to your local machine.
+Then, checkout master and run
 ```
 $ git merge <branch name>
 ```
