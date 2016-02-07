@@ -22,43 +22,50 @@ and
 Doing this doesn't sign you up for anything and you won't get emails because of it.
 It simply sets two variables in a global configuration file on your computer for later use.
 
-### Initialization
-Make a new directory that will contain your practice Git project, and `cd` into that new directory.
+### Making a Repository
+Login at https://github.com/ and make a new repository with the button on the rightmost column.
+Make sure to *check the box for initializing the repository with a README*.
+Right now the repository only lives on GitHub's remote servers. To get it onto your local machine,
+go to the directory you would like the project to be placed in and run
 ```
-$ mkdir practice-git
-$ cd practice-git
+$ git clone <url of your github repository>
 ```
-To have Git start tracking the contents of the directory, run
+This will make a new directory that contains the project you have just cloned. Go into that directory
+and run
+```
+$ git status
+```
+which should print
+```
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+```
+Congratulations, you've just created and cloned your first Git repository.
 
-```
-$ git init
-Initialized empty Git repository in /path/to/your/practice-git/.git
-```
-
-Congratulations, you have just created your first Git repository!
-
-### Staging Files
-Let's give Git some files to track. Create a new text file
-`$ touch README.md`
-and, using your favorite editor, write `Hello World` in the first line.
+### Making Changes and Staging Files
+Let's give Git some changes to track.
+Using your favorite editor, write `Hello World` in the next empty line of the README file.
 
 If you run `$ git status` you will see something like
 ```
-$ git status
 On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
 
-Initial commit
+        modified:   README.md
 
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-	README.md
-
-nothing added to commit but untracked files present (use "git add" to track)
+no changes added to commit (use "git add" and/or "git commit -a")
 ```
-Run `$ git add README.md` to stage the readme file.
+Run
+```
+$ git add README.md
+```
+to stage the README file.
 
-### Committing Changes
+### Committing and Pushing
 Once changes have been staged, we can commit them to the local repository with 
 ```
 $ git commit -m "Initial commit."
@@ -66,18 +73,11 @@ $ git commit -m "Initial commit."
 The `-m` flag signals that the string in double quotes following it is the *commit message*,
 a short description of the changes in the commit.
 
-### Remotes
-So far everything you've done has been on your local machine. To actually share code,
-we need to set up a remote repository. Login at https://github.com/ and make a new
-repository with the button on the rightmost column. Make sure you DO NOT initialize
-the repository with a README since you've already made one locally.
-
-To tell your local Git repository where the remote is, run
+Finally, to get your changes back onto GitHub, simply run
 ```
-$ git remote set-url origin <your github repository url>
+$ git push
 ```
-
-### Pushing
+You've made it through your first iteration of the edit-stage-commit-push cycle that is core to Git!
 
 ## Best Practices
 ### Commit Messages
