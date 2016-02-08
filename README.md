@@ -117,6 +117,20 @@ to be aware of Git's branch management commands under `git branch`.
 Once you've successfully moved to your new branch, write `contributors: <your name>` in the 4th line of the
 README and then add-commit-push your changes to GitHub.
 
+When you tried to push, you probably ran into this error
+```
+fatal: The current branch test has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin <branch name>
+```
+This is because your new branch doesn't exist in the remote repository yet. Git is very helpful in that it
+knows some common things that people try do to while using it, such as push a new branch. In these cases,
+the output will tell you the correct command to run. Follow Git's advice and run
+```
+$ git push --set-upstream origin <branch name>
+```
+
 The owner of the repository should then pull the changes (partner, look over their shoulder while they do this)
 ```
 $ git pull
