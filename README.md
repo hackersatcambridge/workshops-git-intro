@@ -85,7 +85,7 @@ to stage the README file.
 ### Committing and Pushing
 Once changes have been staged, we can commit them to the local repository with 
 ```
-$ git commit -m "Initial commit."
+$ git commit -m "Add Hello World to README"
 ```
 The `-m` flag signals that the string in double quotes following it is the *commit message*,
 a short description of the changes in the commit.
