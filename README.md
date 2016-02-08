@@ -82,7 +82,7 @@ $ git add README.md
 to stage the README file.
 
 ### Committing and Pushing
-Once changes have been staged, we can commit them to the local repository with 
+Once changes have been staged, we can commit them to the local repository with
 ```
 $ git commit -m "Initial commit."
 ```
@@ -141,15 +141,104 @@ contributors: bar
 You will not be able to merge until all structures like this are resolved in the code. In this case, you're both
 collaborators so resolve the merge conflict by listing both of your names in the collaborators lines.
 
-Once you have finished resolving, add-commit-push again. If you were not the one doing the merging, 
+Once you have finished resolving, add-commit-push again. If you were not the one doing the merging,
 you should `$ git pull` to receive the changes in your local repository.
 
 Feel free to spend some extra time making new branches, committing things, and merging back and forth!
+
+### Finished!
+
+You've worked through the exercises in this workshop. Try now to do some more complicated tasks, aided by the information
+below. Our demonstrators will be on hand to answer any questions you have.
+
+A good task will be to try and move some of your existing projects to Git and also GitHub.
 
 ## Best Practices
 ### Branching Structure
 ### Pull Requests
 ### Commit Messages
+### What should I leave out of my repo?
+
+You want your repo to be as system-agnostic as possible to allow anyone to clone it and do a bit of setup to start
+running with the project. For this reason, you should leave out
+
+- any files that are specific to your operating system,
+- any files that pertain to a specific workspace or IDE (Java IDEs are very good at doing this)
+- any sensitive information such as database passwords
+- binary files (images are a common exception)
+- anything that can be easily re-generated from your codebase (like binary files or packages from a package manager)
+
+This may require some changes to your project if you have some of this information hard-coded with other files that
+are important. This may be a time to look into general config files or environment variables to make your project
+more comfortably work on other systems.
+
+To make this more manageable, check out the `.gitignore` file below.
 
 ## Tips
+### Adding lots of files
+
+If you're writing a commit with lots of changes, you would spend far too much time adding all of these files manually.
+Git commands support file "globbing", so instead of writing this:
+
+```
+git add assets/main.css
+git add assets/normalize.css
+git add assets/home.css
+git add assets/video.css
+```
+
+You can write
+
+```
+git add assets/*.css
+```
+
+To add every `.css` file in the `assets` directory **that has been changed**. This extends
+powerfully to the common statement
+
+```
+git add .
+```
+
+Which will add everything in your working directory that has been changed. What are the potential problems with this?
+
+### The .gitignore file
+
+When adding lots of files to git, there are files that for some reason or another, you will never want committed (see above). If
+you try to remember these files manually, you will most likely forget. Why not let git know what files you don't want committed?
+
+Simply create a `.gitignore` file at the root of your repository and list the files/folders you want to exclude
+
+```
+# Exclude any file with type .o
+*.o
+
+# Exclude a directory
+annoying-ide-config/
+
+# Exclude something only at the root
+/config.json
+/packages/
+```
+
+Now if we add a file `config.json`, and try `git add .`, nothing will be staged because Git knows to ignore that file.
+
+The syntax can get quite complex and when it comes to *un-ignoring* something that has been ignored, can be slightly unintuitive.
+
+### Your text editor/IDE
+
+Git works happily with other software. There are a lot of nice GUIs that you can use if looking at your repo visually
+will help. You may also find that your current editor of choice works with Git. The features can get quite fancy,
+allowing you to make commits and add files right inside the editor. The key feature, though, is to have a text editor
+that lets you easily see what files are changed. This will keep you much saner.
+
 ### Aliasing
+
+## Further Reading/Useful Links
+
+- [Slides used in the workshop](http://codepen.io/Pinpickle/full/wMYZGy/)
+- [Official Git Docs](https://git-scm.com/documentation)
+- [GitHub Flow](https://guides.github.com/introduction/flow/)
+- [Interactive GitHub intro to Git](https://try.github.io/)
+- [A tool for creating `.gitignore` files](https://www.gitignore.io/)
+- [GitHub's GUI for Git](https://desktop.github.com/)
