@@ -1,5 +1,21 @@
 # Intro to Git
-## What is Git 
+## What is Git and why should you use it?
+Git is a version control system. It helps you organize projects in a way that lets you to:
+- break your work up into manageable pieces
+- modify the same files as several other people
+- try multiple approaches without having to make backups
+- reliably undo changes that don't work
+- store your project remotely and transfer it to other machines
+- *work on your project locally even without access to your remote copy*
+and more! These features by themselves motivate the majority of programmers to use Git even
+if they are working on a solo project. Moreover, larger teams simply would not be able
+to function without version control.
+
+Coming from no version control entirely, it may seem daunting to have to remember all of
+these Git commands. The goal of this workshop is to give you a handful of commands that
+will most of your day-to-day Git usage, and to show you some of the benefits along the way.
+
+Let's begin.
 
 ## The Workshop
 ### Installing Git
