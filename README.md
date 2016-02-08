@@ -7,6 +7,7 @@ Git is a version control system. It helps you organize projects in a way that le
 - reliably undo changes that don't work
 - store your project remotely and transfer it to other machines
 - *work on your project locally even without access to your remote copy*
+
 and more! These features by themselves motivate the majority of programmers to use Git even
 if they are working on a solo project. Moreover, larger teams simply would not be able
 to function without version control.
@@ -154,8 +155,48 @@ below. Our demonstrators will be on hand to answer any questions you have.
 A good task will be to try and move some of your existing projects to Git and also GitHub.
 
 ## Best Practices
-### Branching Structure
+### When to Commit & Commit Messages
+Generally you should commit when you have implemented a small feature in your project. Your commit messages
+should be able to tell readers what was accomplished in your commit in less than 80 characters. If you really
+need to add more information, you can do so in a multi-line commit:
+```
+$ git commit -m "First line should be less than 80 char
+Subsequent lines add information"
+```
+or simply run `$ git commit` which will open up your editor. The first line should contain all the information necessary
+to tell readers what that commit accomplishes! If you find that it cannot, you have probably included too many
+changes in your commit.
+
+Some examples of things that are good commits:
+- Implemented a method.
+- Wrote an interface.
+- Refactored a method.
+- Renamed a class, method, or function.
+Bad commits:
+- An entire fully implemented class (too large).
+- Incomplete code, especially syntax mistakes.
+- Single typo or stylistic fixes (too small).
+- Changes for multiple unrelated features.
+
+### Branching
+Whenever you would like to work on a new major feature, such as a new class or a refactor, make a branch
+with a descriptive name such as "classifier-implementation" or "migrating-to-sql". Depending on how many people
+are working on the project, it may be useful to include your name in the branch name as well.
+
 ### Pull Requests
+
+Never push to master. Even when working by yourself on a project, it is good practice to make branches for
+features and to merge into master only when the feature has been fully implemented, tested, and reviewed.
+
+After implementing and testing, you should submit your code for review by somebody from your team via a
+*pull request*, which is a proposal to merge one branch into another. Once the owner of the branch or
+repository, and ideally a few more people, look at your code for style and conformity to project guidelines,
+the pull request can be approved, in which case GitHub will merge the branches.
+
+You can read more about the process here: https://guides.github.com/introduction/flow/
+While this process seems tedious, it is universally adopted by top software companies to ensure quality of
+code. If a company actually skips code review, definitely think twice about working there.
+
 ### Commit Messages
 ### What should I leave out of my repo?
 
