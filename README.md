@@ -156,8 +156,8 @@ Bad commits:
 
 ### Branching
 Whenever you would like to work on a new major feature, such as a new class or a refactor, make a branch
-with a descriptive name such as "classifier-implementation" or "migrating-to-sql". Depending on how big your
-group is, it may be useful to include your name in the branch name as well.
+with a descriptive name such as "classifier-implementation" or "migrating-to-sql". Depending on how many people
+are working on the project, it may be useful to include your name in the branch name as well.
 
 ### Pull Requests
 Never push to master. Even when working by yourself on a project, it is good practice to make branches for
