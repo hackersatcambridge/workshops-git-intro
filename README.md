@@ -7,6 +7,7 @@ Git is a version control system. It helps you organize projects in a way that le
 - reliably undo changes that don't work
 - store your project remotely and transfer it to other machines
 - *work on your project locally even without access to your remote copy*
+
 and more! These features by themselves motivate the majority of programmers to use Git even
 if they are working on a solo project. Moreover, larger teams simply would not be able
 to function without version control.
